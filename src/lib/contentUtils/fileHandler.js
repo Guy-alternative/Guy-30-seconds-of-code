@@ -13,7 +13,7 @@ const frontmatterReader = (data, filePath) => {
 
 const readers = {
   json: data => JSON.parse(data),
-  yaml: data => yaml.load(data),
+  yaml: data => yaml.load(data, { schema: yaml.JSON_SCHEMA }),
   md: (data, filePath) => frontmatterReader(data, filePath),
 };
 
